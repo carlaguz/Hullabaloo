@@ -1,13 +1,12 @@
 <?php
 include('./headers.php');
-header('Content-Type: application/json');
-$obj = new stdClass();
+include('./connection.php');
 
+$user = $_POST['user'];
+$pwd = $_POST['pwd'];
 
-$obj->username = 'hi';
-$obj->password = '123';
+$res = $conn->query("SELECT * FROM users WHERE name = '$user' AND password = '$pwd'");
 
-
-echo json_encode($obj);
+echo json_encode(mysqli_fetch_object($res));
 
 ?>

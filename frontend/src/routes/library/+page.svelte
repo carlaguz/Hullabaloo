@@ -1,5 +1,7 @@
 <script>
   import Album from "../../component/Album.svelte";
+  let filtroAlbum = "";
+  let filtroBanda = "";
   const fetchalbums = async () => {
     const res = await fetch("http://localhost/proyectofinal/php/Album_Buscar.php");
     const data = await res.json();
@@ -8,18 +10,28 @@
   };
 </script>
 
-<h1>library here</h1>
+<!-- busqueda -->
+<input type="text" placeholder="Filtrar album" bind:value={filtroAlbum}>
+<input type="text" placeholder="Filtrar banda" bind:value={filtroBanda}>
+
 <ul>
   {#await fetchalbums() then albums}
-    {#each albums as album}
+    {#each albums.filter(album=> album.Titulo.toLowerCase().includes(filtroAlbum.toLowerCase()) && album.Nombre.toLowerCase().includes(filtroBanda.toLowerCase())) as album}
+      <!-- svelte-ignore a11y-click-events-have-key-events -->
       <li>
-        <Album artist={album.Nombre} cover={album.Portada} title={album.Titulo} />
+        <a href="/player/{album.id}">
+          <Album artist={album.Nombre} cover={album.Portada} title={album.Titulo} />
+        </a>
       </li>
     {/each}
   {/await}
 </ul>
 
 <style>
+  a{
+    text-decoration: none;
+    color: unset;
+  }
   ul {
     display: grid;
     list-style: none;

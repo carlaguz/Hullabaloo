@@ -2,7 +2,7 @@
 include('./headers.php');
 include('./connection.php');
 
-$res = $conn->query("SELECT a.Titulo, a.Portada, b.Nombre FROM album a JOIN banda b WHERE a.FK_Banda = b.id;");
+$res = $conn->query("SELECT a.id, a.Titulo, a.Portada, b.Nombre FROM album a JOIN banda b WHERE a.FK_Banda = b.id;");
 
 $array_results = [];
 

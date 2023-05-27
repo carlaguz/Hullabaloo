@@ -14,7 +14,7 @@
         });
         
         const data = await res.json();
-        console.log(data);
+        alert(data)
         nombre = "";
         portada = "";
     };

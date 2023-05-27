@@ -9,14 +9,6 @@
       title: "library",
     },
     {
-      link: "/find",
-      title: "find",
-    },
-    {
-      link: "/player",
-      title: "player",
-    },
-    {
       link: "/crear/artista",
       title: "Crear artista",
     },
@@ -30,8 +22,8 @@
     },
 
     {
-      link: "/crear/track",
-      title: "Crear track",
+      link: "/crear/cancion",
+      title: "Crear canción",
     },
   ];
 </script>

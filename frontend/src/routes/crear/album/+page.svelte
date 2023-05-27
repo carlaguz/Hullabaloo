@@ -16,7 +16,7 @@
         });
         
         const data = await res.json();
-        console.log(data);
+        alert(data)
         titulo = "";
         portada = "";
     };
@@ -38,9 +38,6 @@
         <div>
             <h3>Portada del album</h3>
             <input type="text" placeholder="Portada" bind:value={portada}>
-        </div>
-        <button type="button" on:click={registrarAlbum}>Registrar</button>
-        <div>
             <h3>Pertenece a la banda:</h3>
             <select bind:value={banda}>
                 {#await cargarBandas() then bandas}
@@ -49,6 +46,9 @@
                     {/each}
                 {/await}
             </select>
+        </div>
+        <div>
+            <button type="button" on:click={registrarAlbum}>Registrar</button>
         </div>
     </form>
 
