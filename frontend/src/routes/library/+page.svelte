@@ -11,10 +11,12 @@
 </script>
 
 <!-- busqueda -->
-<input type="text" placeholder="Filtrar album" bind:value={filtroAlbum}>
-<input type="text" placeholder="Filtrar banda" bind:value={filtroBanda}>
+<div class="flex gap-3 p-4">
+  <input type="text" placeholder="Filtrar album" bind:value={filtroAlbum} class="py-1 px-2 rounded-xl text-black">
+  <input type="text" placeholder="Filtrar banda" bind:value={filtroBanda} class="py-1 px-2 rounded-xl text-black">
+</div>
 
-<ul>
+<ul class="grid grid-cols-5 gap-4 px-3 py-1 mx-auto place-items-center">
   {#await fetchalbums() then albums}
     {#each albums.filter(album=> album.Titulo.toLowerCase().includes(filtroAlbum.toLowerCase()) && album.Nombre.toLowerCase().includes(filtroBanda.toLowerCase())) as album}
       <!-- svelte-ignore a11y-click-events-have-key-events -->
@@ -32,16 +34,6 @@
     text-decoration: none;
     color: unset;
   }
-  ul {
-    display: grid;
-    list-style: none;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 15px;
-    width: 95%;
-    margin: auto;
-    place-items: center;
-  }
-
   @media screen and (max-width: 1300px) {
     ul {
       grid-template-columns: repeat(4, 1fr);
@@ -52,7 +44,6 @@
       grid-template-columns: repeat(3, 1fr);
     }
   }
-
   @media screen and (max-width: 824px) {
     ul {
       grid-template-columns: repeat(2, 1fr);

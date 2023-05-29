@@ -1,4 +1,5 @@
 <script>
+  import "../app.css";
   const routes = [
     {
       link: "/",
@@ -31,10 +32,10 @@
 <section>
   <nav>
     {#each routes as route}
-      <li>
-        <a href={route.link}>{route.title}</a>
-      </li>
-    {/each}
+        <li>
+          <a href={route.link}>{route.title}</a>
+        </li>
+      {/each}
   </nav>
   <main>
     <slot />
@@ -52,7 +53,9 @@
   }
   nav,
   main {
-    border: 2px solid white;
+    /*border: 2px solid #FCFEFD;*/
+    background-color: rgba(0, 0, 0, 0.247);
+    border-radius: 10px;
     list-style: none;
   }
   main {
@@ -64,7 +67,7 @@
   }
   a {
     text-decoration: none;
-    color: pink;
+    color: #FCFEFD;
     font-size: 1.2em;
   }
 </style>

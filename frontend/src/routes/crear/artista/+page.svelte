@@ -38,6 +38,8 @@
         <div>
             <h3>Foto del artista</h3>
             <input type="text" placeholder="Foto" bind:value={foto}>
+        </div>
+        <div>
             <h3>Pertenece a la banda:</h3>
             <select bind:value={banda}>
                 {#await cargarBandas() then bandas}
@@ -60,9 +62,40 @@
 
 <style>
     section{
-        padding: 15px;
         display: grid;
+        padding: 15px;
         grid-auto-flow: column;
+        align-items: center;
+    }
+    div{
+        display: grid;
+        gap: 3px;
+        width: 30vw;
+        padding: 10px;
+        margin: 0 auto;
+    }
+    input, select{
+        padding: 5px;
+        border-radius: 10px;
+    }
+    button{
+        display: inline-block;
+        color: #FFFDFF;
+        background-color: #02221F;
+        border: none;
+        height: 40px;
+        width: 100%;
+        align-items: center;
+        margin: 15px auto;
+        padding: 5px;
+        border-radius: 15px;
+        font-size: 0.9em;
+        cursor: pointer;
+        -moz-transition: all 0.5s; /* add this line, firefox */
+        transition: all 0.5s;
+    }
+    button:hover{
+      background-color: #02221Fs;
     }
     img{
         width: 350px;

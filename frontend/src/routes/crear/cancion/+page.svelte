@@ -43,8 +43,8 @@
         <div>
             <h3>URL de la canción</h3>
             <input type="text" placeholder="URL" bind:value={link} />
+            <button type="button" on:click={registrarTrack}>Registrar</button>
         </div>
-        <button type="button" on:click={registrarTrack}>Registrar</button>
     </form>
 
     <div>
@@ -67,17 +67,45 @@
 </section>
 
 <style>
-    section {
-        padding: 15px;
+    section{
         display: grid;
+        padding: 15px;
         grid-auto-flow: column;
+        align-items: center;
+    }
+    div{
+        display: grid;
+        gap: 3px;
+        width: 30vw;
+        padding: 10px;
+        margin: 0 auto;
+    }
+    input, select{
+        padding: 5px;
+        border-radius: 10px;
     }
     button{
-        display: grid;
-        grid-template-columns: 120px;
-        background-image: linear-gradient(20deg, pink, lavender);
-        border-radius: 10px;
-        margin-top: 10px;
-        padding: 10px;
+        display: inline-block;
+        color: #FFFDFF;
+        background-color: #02221F;
+        border: none;
+        height: 40px;
+        width: 100%;
+        align-items: center;
+        margin: 15px auto;
+        padding: 5px;
+        border-radius: 15px;
+        font-size: 0.9em;
+        cursor: pointer;
+        -moz-transition: all 0.5s; /* add this line, firefox */
+        transition: all 0.5s;
+    }
+    button:hover{
+      background-color: #02221F;
+    }
+    img{
+        width: 350px;
+        height: 350px;
+        object-fit: cover;
     }
 </style>

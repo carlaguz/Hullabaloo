@@ -29,8 +29,8 @@
         <div>
             <h3>Portada de la banda</h3>
             <input type="text" placeholder="Portada" bind:value={portada}>
+            <button type="button" on:click={registrarBanda}>Registrar</button>
         </div>
-        <button type="button" on:click={registrarBanda}>Registrar</button>
     </form>
 
     <div>
@@ -41,9 +41,40 @@
 
 <style>
     section{
-        padding: 15px;
         display: grid;
+        padding: 15px;
         grid-auto-flow: column;
+        align-items: center;
+    }
+    div{
+        display: grid;
+        gap: 3px;
+        width: 30vw;
+        padding: 10px;
+        margin: 0 auto;
+    }
+    input{
+        padding: 5px;
+        border-radius: 10px;
+    }
+    button{
+        display: inline-block;
+        color: #FFFDFF;
+        background-color: #02221F;
+        border: none;
+        height: 40px;
+        width: 100%;
+        align-items: center;
+        margin: 15px auto;
+        padding: 5px;
+        border-radius: 15px;
+        font-size: 0.9em;
+        cursor: pointer;
+        -moz-transition: all 0.5s; /* add this line, firefox */
+        transition: all 0.5s;
+    }
+    button:hover{
+      background-color: #02221F;
     }
     img{
         width: 350px;
