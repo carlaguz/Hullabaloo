@@ -13,12 +13,12 @@
 	on:click|self={() => dialog.close()}
 >
 	<div on:click|stopPropagation>
-		<slot name="header" />
+		<slot class="" name="header" />
 		<hr />
 		<slot />
 		<hr />
 		<!-- svelte-ignore a11y-autofocus -->
-		<button autofocus on:click={() => dialog.close()}>close modal</button>
+		<button class="rounded-3xl bg-lime-700 bg-opacity-70 px-10 py-2 text-white shadow-xl backdrop-blur-md transition-colors duration-500 hover:bg-lime-800" autofocus on:click={() => dialog.close()}>Cerrar</button>
 	</div>
 </dialog>
 
@@ -59,5 +59,6 @@
 	}
 	button {
 		display: block;
+		margin: 10pxj auto;
 	}
 </style>

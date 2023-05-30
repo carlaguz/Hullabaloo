@@ -1,5 +1,7 @@
 <script>
   import "../app.css";
+  import {user} from '../stores/user'
+  import {redirect} from '@sveltejs/kit'
   const routes = [
     {
       link: "/",
@@ -8,35 +10,36 @@
     {
       link: "/library",
       title: "library",
-    },
-    {
-      link: "/crear/artista",
-      title: "Crear artista",
-    },
-    {
-      link: "/crear/banda",
-      title: "Crear banda",
-    },
-    {
+    },    {
       link: "/crear/album",
-      title: "Crear album",
-    },
-
-    {
-      link: "/crear/cancion",
-      title: "Crear canción",
+      title: "crear",
     },
   ];
+
+/*export function load(){
+  if(!$user.name){
+     throw redirect(302,'/')
+  }
+}*/
+
 </script>
 
 <section>
+  {#if $user.name}
   <nav>
     {#each routes as route}
-        <li>
+        <li class="cursor-pointer">
           <a href={route.link}>{route.title}</a>
         </li>
       {/each}
+  <!-- svelte-ignore a11y-click-events-have-key-events -->
+  <li class="cursor-pointer" on:click={()=> $user = {}}>log out</li>
+
   </nav>
+  {:else}
+  <nav></nav>  
+  {/if}
+  
   <main>
     <slot />
   </main>

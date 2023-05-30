@@ -50,7 +50,7 @@
             </select>
         </div>
         <div>
-            <button type="button" on:click={registrarAlbum}>Registrar</button>
+            <button class="m-2 rounded-3xl bg-lime-700 bg-opacity-70 px-10 py-2 text-white shadow-xl backdrop-blur-md transition-colors duration-500 hover:bg-lime-800" type="button" on:click={registrarAlbum}>Registrar</button>
         </div>
     </form>
 
@@ -75,24 +75,9 @@
         margin: 0 auto;
     }
     input, select{
+        color: black;
         padding: 5px;
         border-radius: 10px;
-    }
-    button{
-        display: inline-block;
-        color: #FFFDFF;
-        background-color: #02221F;
-        border: none;
-        height: 40px;
-        width: 100%;
-        align-items: center;
-        margin: 15px auto;
-        padding: 5px;
-        border-radius: 15px;
-        font-size: 0.9em;
-        cursor: pointer;
-        -moz-transition: all 0.5s; /* add this line, firefox */
-        transition: all 0.5s;
     }
     button:hover{
       background-color: #02221F;
